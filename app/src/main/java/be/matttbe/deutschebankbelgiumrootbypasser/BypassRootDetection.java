@@ -21,8 +21,6 @@ package be.matttbe.deutschebankbelgiumrootbypasser;
  */
 
 
-import android.util.Log;
-
 import de.robv.android.xposed.IXposedHookLoadPackage;
 import de.robv.android.xposed.XposedBridge;
 import de.robv.android.xposed.callbacks.XC_LoadPackage.LoadPackageParam;
@@ -43,7 +41,6 @@ public class BypassRootDetection implements IXposedHookLoadPackage {
 			return;
 
 		XposedBridge.log(TAG + ": Bypassing root detection for " + PACKAGE_NAME);
-		Log.d(TAG, "Loaded app: " + PACKAGE_NAME);
 
 		/* Force returned value 0 for method to check Root status */
 		findAndHookMethod(UTIL_CLASS,
